@@ -5,7 +5,9 @@ $(document).ready(function () {
 
 
         loginSubmit.click(function() {
-          var url = "http://localhost/weplant/entities/adminLogin/get.php";
+          console.log("LOGIN CLICK");
+          // var url = "http://localhost/weplant/entities/adminLogin/get.php";
+          var url = "../../weplant/entities/adminLogin/get.php";
           var formData = {
             'username' : usernameSelected.val(),
             'password':password.val(),

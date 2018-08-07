@@ -12,13 +12,12 @@ $dbclass = new Database();
 $connection = $dbclass->getConnection();
 
 $adminLogin = new adminLogin($connection);
-$username = $_REQUEST['username'];
-$password = $_REQUEST['password'];
+$username = $_GET['username'];
+$password = $_GET['password'];
 $stmt = $adminLogin->read($connection,$username, $password);
 $count = $stmt;
-
-echo $username."  ".$password ;
-if($count->num_rows > 0){
+ $response =  new stdClass();
+if($count){
     $products = array();
     $products["body"] = array();
     $products["count"] = $count;
@@ -35,21 +34,26 @@ if($count->num_rows > 0){
     // }
 
     while($row = $count->fetch_assoc()) {
-                $curPassword =      $row["Password"];
+                $curPassword =  $row["Password"];
     }
     
     if($password == $curPassword){  
-        header("Content-type: application/json");
-        $arr = array('message' => 'LoginSuccesfull'); //etc
-        header('HTTP/1.1 201 Created');
-        echo json_encode($arr);
+        // header("Content-type: application/json");
+        // $arr = array('message' => 'LoginSuccesfull'); //etc
+        // header('HTTP/1.1 201 Created');
+        // echo json_encode($arr);
+       
+        $response->success = true;
+        echo json_encode($response);
+    } else {
+        $response->success = false;
+        echo json_encode($response);
     }
 }
 
 else {
 
-    echo json_encode(
-        array("body" => array(), "count" => 0)
-    );
+   $response->success = false;
+        echo json_encode($response);
 }
 ?>
