@@ -28,7 +28,14 @@ class adminLogin{
         // return $stmt;
 
         $result = $conn->query($query);
-
+        // if ($result) {
+        //   
+        //     while($row = $result->fetch_assoc()) {
+        //         return json_encode($row);
+        //     }
+        // } else {
+        //     return  "0 results";
+        // }
         return $result;
         
     }

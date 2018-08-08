@@ -31,7 +31,7 @@
             <label for="password">Password</label>
             <input class="form-control" id="password" name="password" type="password" placeholder="Password">
           </div>
-          <button class="btn btn-primary btn-block" id="loginSubmit">Login</button>
+          <button class="btn btn-primary btn-block" id="loginSubmit">Test Login</button>
         </form>
       </div>
     </div>
@@ -39,7 +39,8 @@
   <!--Login Specific Javascript-->
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="./js/login/login.js"></script>
+  <!-- <script src="./js/login/login.js"></script> -->
+  <script src="./js/login/alt_login.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- Core plugin JavaScript-->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
