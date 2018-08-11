@@ -44,3 +44,4 @@ class adminLogin{
     //D
     public function delete(){}
 }
+?>
