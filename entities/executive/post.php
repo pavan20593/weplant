@@ -22,15 +22,4 @@ echo json_encode($_POST['fullName']);
 
 $stmt = $executive->create($connection,$fullName, $email, $number, $address, $pincode);
 $response =  new stdClass();
-// echo json_encode($stmt);
-// if($count){
-//         $response->success = true;
-//         echo json_encode($response);
-   
-// }
-
-// else {
-//    $response->success = false;
-//         echo json_encode($response);
-// }
 ?>

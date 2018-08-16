@@ -21,10 +21,10 @@ class executive{
         return $result;
     }
     //R
-    public function read($conn,$executiveId){
-        $this->executiveId = $executiveId;
-        $query = "SELECT * FROM `Executive Table` WHERE `EID` = '".$executiveId."'";
+    public function read($conn){
+        $query = "SELECT * FROM `Executive Table`";
         $result = $conn->query($query);
+        echo json_encode($result);
         return $result;
     }
     //U
