@@ -3,7 +3,7 @@ class executive{
 
     // Connection instance
     private $connection;
- 
+
     public function __construct($connection){
         $this->connection = $connection;
     }
@@ -22,14 +22,14 @@ class executive{
     }
     //R
     public function read($conn){
-        $query = "SELECT * FROM `Executive Table`";
+        $query = "SELECT * FROM `Executive Table` WHERE 1";
         $result = $conn->query($query);
-        echo json_encode($result);
+        if ($result->num_rows > 0) echo json_encode($result->fetch_assoc());
         return $result;
     }
     //U
     public function update(){
-        
+
     }
     //D
     public function delete(){}
