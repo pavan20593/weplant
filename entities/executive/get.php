@@ -12,13 +12,10 @@ $dbclass = new Database();
 $connection = $dbclass->getConnection();
 
 $executive = new executive($connection);
-$executiveId = $_GET['EID'];
-$executiveResponse = $executive->read($connection,$executiveId);
+$executiveResponse = $executive->read($connection);
  $response =  new stdClass();
 if($executiveResponse){
-    
-        $response->success = true;
-        echo json_encode($response);
+        $response = $executiveResponse; 
     } 
 
 else {
